@@ -35,6 +35,15 @@ word for word. Everything here is **rule** unless marked otherwise.
 Raid days, number of raids, loot and consumable standards are **open**: see
 `decisions/`.
 
+## Getting better
+
+- Each class has a class lead who sets the rotation and gear baseline and
+  publishes the required consumables per role and raid.
+- Raids are logged on Warcraft Logs. Raiders review their own logs; what
+  counts is improvement after feedback.
+
+See `decisions/2026-11-08-class-leads-and-logs.md`.
+
 ## Ranks
 
 **Direction** (Shoei, 8 Nov 2026):
