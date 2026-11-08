@@ -25,6 +25,19 @@ word for word. Everything here is **rule** unless marked otherwise.
 10. **Officer escalation.** Sort minor issues privately first, then bring
     them to an officer. Steps: discussion, warning, further action, removal.
 
+## Before raids open
+
+Raids open the week after 1 Dec 2026.
+
+- Pick one main early, and be willing to play what the roster needs.
+- Tell the officers your main's class and role by [date].
+- Be raid-ready: max level, pre-raid gear, attunements and resistance gear as
+  the content needs.
+- Pick a profession that supplies the raid; officers coordinate the spread.
+- Build up gold and materials for consumables.
+
+See `decisions/2026-11-08-raid-readiness.md`.
+
 ## Every raid
 
 - 90% attendance. Report an absence as early as possible so a replacement can
