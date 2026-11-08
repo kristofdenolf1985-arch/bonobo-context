@@ -1,0 +1,163 @@
+<title>Bonobo Recruitment</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Oswald:wght@500;600;700&family=Alegreya:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: the guild's Orgrimmar banner art as a full-bleed header that fades into dark iron, a WoW nameplate under it,
+   then one reading column. Rules hang as war-banner tags; status pills use Horde red, Durotar ochre and orc green.
+   Deliberately dark-only: the art is dusk over Orgrimmar and the page commits to that look in every theme. */
+:root {
+  --night: #151012;      /* forge iron, page ground */
+  --iron: #1f191a;       /* panels */
+  --rivet: #3a2e2c;      /* borders and rules */
+  --bone: #eee4d2;       /* text, like the logo's bone-white */
+  --ash: #b0a28f;        /* muted text */
+  --blood: #b8232b;      /* Horde banner red */
+  --blood-deep: #7d1419;
+  --ochre: #e0823a;      /* Durotar rock at sunset */
+  --dusk: #9c7be0;       /* the violet sky */
+  --nameplate: #f4d21f;  /* in-game guild tag yellow */
+  --orc: #8cbf4f;        /* orc green, for "set" */
+  --f-logo: "Rubik Dirt", Impact, "Arial Black", sans-serif;
+  --f-head: "Oswald", "Arial Narrow", Impact, sans-serif;
+  --f-body: "Alegreya", Georgia, "Times New Roman", serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--night); color: var(--bone); font-family: var(--f-body); font-size: 18px; line-height: 1.6; padding-block: 0 72px; }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+
+/* header */
+.hero { position: relative; max-width: 1180px; margin: 0 auto; }
+.hero img { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 35%; }
+.hero::after { content: ""; position: absolute; inset: 40% 0 0 0; background: linear-gradient(to bottom, transparent, var(--night)); pointer-events: none; }
+.hero::before { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 120px 30px var(--night); pointer-events: none; z-index: 1; }
+.intro { position: relative; z-index: 2; margin-top: -72px; display: flex; flex-direction: column; gap: 14px; }
+.plate { font-family: var(--f-head); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.02em; color: var(--nameplate); text-shadow: 0 1px 0 #000, 0 0 12px rgba(0,0,0,.8); }
+.plate span { color: var(--dusk); }
+h1, h2, h3 { margin: 0; text-wrap: balance; line-height: 1.05; }
+h1 { font-family: var(--f-logo); font-weight: 400; font-size: clamp(2.8rem, 10vw, 5rem); color: var(--bone); transform: skewX(-7deg); transform-origin: left; text-shadow: 3px 3px 0 var(--blood-deep), 0 0 24px rgba(0,0,0,.6); }
+.lede { font-size: 1.22rem; max-width: 58ch; }
+.warbanner { align-self: flex-start; font-family: var(--f-head); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; color: var(--bone); background: var(--blood); padding: 8px 16px 14px; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%); }
+
+h2 { font-family: var(--f-head); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.9rem; color: var(--bone); display: flex; align-items: center; gap: 14px; }
+h2::after { content: ""; flex: 1; height: 2px; background: linear-gradient(to right, var(--blood), transparent); }
+h3 { font-family: var(--f-head); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.02em; color: var(--bone); }
+p { margin: 0; }
+section { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.eyebrow { font-family: var(--f-head); font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.82rem; color: var(--ochre); }
+.note { font-size: 0.95rem; color: var(--ash); }
+
+/* right now */
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.fact { background: var(--iron); border: 1px solid var(--rivet); border-top: 3px solid var(--ochre); padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.fact b { font-family: var(--f-head); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.95rem; color: var(--ochre); }
+.fact span { font-size: 0.98rem; color: var(--bone); line-height: 1.45; }
+@media (max-width: 640px) { .facts { grid-template-columns: 1fr; } }
+
+/* rules */
+ol.rules { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; counter-reset: r; }
+ol.rules li { counter-increment: r; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 2px 14px; background: var(--iron); border: 1px solid var(--rivet); padding: 14px 16px 14px 0; min-width: 0; }
+ol.rules li::before { content: counter(r, decimal-leading-zero); grid-row: span 2; align-self: start; font-family: var(--f-head); font-weight: 700; font-size: 1.05rem; color: var(--bone); background: var(--blood); text-align: center; padding: 6px 0 12px; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%); font-variant-numeric: tabular-nums; }
+ol.rules p { font-size: 0.96rem; color: var(--ash); }
+@media (max-width: 640px) { ol.rules { grid-template-columns: 1fr; } }
+
+/* decided table */
+.table-scroll { overflow-x: auto; border: 1px solid var(--rivet); background: var(--iron); }
+table { border-collapse: collapse; width: 100%; font-size: 0.98rem; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--rivet); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-family: var(--f-head); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; color: var(--ash); background: var(--night); }
+.pill { display: inline-block; font-family: var(--f-head); font-weight: 600; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.08em; padding: 3px 10px; white-space: nowrap; border: 1px solid currentColor; }
+.pill.set { color: var(--orc); }
+.pill.plan { color: var(--ochre); }
+.pill.open { color: var(--dusk); }
+
+ul.plain { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
+ul.plain li::marker { color: var(--blood); }
+footer { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--ash); border-top: 1px solid var(--rivet); padding-top: 20px; }
+footer img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--ochre); flex: none; }
+a { color: var(--nameplate); }
+a:focus-visible { outline: 2px solid var(--nameplate); outline-offset: 2px; }
+</style>
+
+<header>
+  <div class="hero"><img src="../brand/img/bonobo-banner.jpg" alt="The Bonobo chimp in a helmet and a Horde tabard, sitting on red rock in front of Orgrimmar at dusk, with the BONOBO logo"></div>
+  <div class="gutter">
+    <div class="wrap">
+      <div class="intro">
+        <div class="plate">&lt;Bonobo&gt; <span>· Horde · EU PvP · WoW Forever</span></div>
+        <h1>Recruitment</h1>
+        <p class="lede">A serious raiding guild with a hardcore mindset, social in tone. We set the standards now and tighten them once people reach 60 and the meta settles.</p>
+        <span class="warbanner">Being set up · 8 November 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="gutter" style="padding-block: 48px 0;">
+<div class="wrap">
+
+  <section>
+    <div class="eyebrow">Right now</div>
+    <h2>Where things stand</h2>
+    <div class="facts">
+      <div class="fact"><b>Applications</b><span>Brightmir handles them. A recruitment section with applications through OXM is planned.</span></div>
+      <div class="fact"><b>Joining now</b><span>Levelling and want in? Ask any guild member in game for an invite.</span></div>
+      <div class="fact"><b>Ranks</b><span>Every active player is Social for now. Raider ranks come once people hit 60.</span></div>
+    </div>
+    <p class="note">This page replaces the old Fun Police Recruit Check. There's no automatic acceptance at the moment. Every application is read by a person.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">What we expect</div>
+    <h2>The ten rules</h2>
+    <p>From #rules-and-expectations on the Discord. Read the full text there; this is the short version.</p>
+    <ol class="rules">
+      <li><h3>Respect</h3><p>Banter is fine. Toxicity, ego, loot drama and feuds are not.</p></li>
+      <li><h3>Criticism and improvement</h3><p>Give feedback constructively and take it well. Nobody is above scrutiny.</p></li>
+      <li><h3>Play for the team</h3><p>Mechanics and the group come before personal gain.</p></li>
+      <li><h3>Be prepared and reliable</h3><p>Gear, consumables, raid items, add-ons, WeakAuras and keybinds sorted. 90% attendance, on time, sober and rested.</p></li>
+      <li><h3>Raid comms</h3><p>Keep comms clear. Banter can wait until after the pull.</p></li>
+      <li><h3>Ask, learn and contribute</h3><p>Learn your class and the encounters, share what you know, keep improving.</p></li>
+      <li><h3>Take accountability</h3><p>Own your mistakes and learn from them. No hiding or blaming.</p></li>
+      <li><h3>No politics</h3><p>Keep politics out of guild chat and voice.</p></li>
+      <li><h3>Serious misconduct</h3><p>Racism, bigotry, harassment, doxxing, threats or sharing personal information can mean immediate removal.</p></li>
+      <li><h3>Officer escalation</h3><p>Sort minor issues privately first, then bring them to an officer.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="eyebrow">The road to raiding</div>
+    <h2>What's decided</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Topic</th><th>Status</th><th>What we know</th></tr></thead>
+        <tbody>
+          <tr><td>Rules and attendance</td><td><span class="pill set">Set</span></td><td>The ten rules above, including 90% attendance.</td></tr>
+          <tr><td>Ranks before 60</td><td><span class="pill plan">Planned</span></td><td>Active players are Social. Players who aren't active keep public access only.</td></tr>
+          <tr><td>Raider ranks</td><td><span class="pill plan">Planned</span></td><td>Raider roles and raider-only channels once people reach 60.</td></tr>
+          <tr><td>Applications</td><td><span class="pill plan">Planned</span></td><td>A dedicated recruitment section, with applications through OXM.</td></tr>
+          <tr><td>Logs</td><td><span class="pill plan">Planned</span></td><td>A Bonobo guild on Warcraft Logs, linked to the Discord.</td></tr>
+          <tr><td>Race and class choices</td><td><span class="pill open">Not before 60</span></td><td>Nobody is told what race to play while the meta is still moving.</td></tr>
+          <tr><td>Raid days, loot system, number of raids</td><td><span class="pill open">Open</span></td><td>Not decided yet. We'll post them here and in #announcements.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Coming from Fun Police?</div>
+    <h2>What changed</h2>
+    <ul class="plain">
+      <li>The rules are the same ten you already know.</li>
+      <li>Bonobo isn't a speedrun guild. The aim is a serious raiding guild where everyone turns up prepared and keeps getting better.</li>
+      <li>The old automatic acceptance for beta Discord members has ended. If you applied to Fun Police and haven't heard back, talk to Brightmir.</li>
+    </ul>
+  </section>
+
+  <footer><img src="../brand/img/bonobo-icon.jpg" alt="Bonobo guild icon">Questions about joining? Ask Brightmir or any officer.</footer>
+</div>
+</div>
