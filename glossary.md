@@ -7,7 +7,7 @@
 | Raider | A member with a raid spot. Raider ranks come after 60 |
 | Trial | A new raider on probation: 3 weeks or 6 raids, see `expectations.md` |
 | Alt raid | A second raid group, for alts and for players working on their performance |
-| Class lead | A member who sets the rotation, gear and consumable baseline for their class. Whether Bonobo uses them is **open** |
+| Class lead | A member who sets the rotation, gear and consumable baseline for their class |
 | Raid-ready | Max level, pre-raid gear, attunements and resistance gear as the content needs, consumables in the bags |
 | Consumables | Flasks, elixirs, food, potions, oils and other items used up in a raid |
 | OXM | forever.oxm.gg, the guild manager used for applications and raid sign-ups |
