@@ -43,6 +43,18 @@ Raid days, number of raids, loot and consumable standards are **open**: see
 - Raider roles and raider-only channels come after 60.
 - Players who aren't active keep a basic role with public access only.
 
+## Trial
+
+| | |
+|---|---|
+| Length | 3 weeks or 6 raids, whichever comes later |
+| Pass | At least 90% attendance, prepared every raid, no repeated avoidable deaths, acts on feedback |
+| Reviewed by | A class lead and one officer |
+| Outcome | Raider, a longer trial, or Social |
+| Loot | Raiders first during the trial; officers have the final say |
+
+See `decisions/2026-11-08-raider-trial.md`.
+
 ## Sources
 
 - #rules-and-expectations, Bonobo Discord, Shoei, 8 Nov 2026. Rules 1 to 9
