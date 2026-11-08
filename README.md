@@ -29,5 +29,5 @@ fixing. An officer then reviews and merges it.
 
 ## Right now
 
-The repo is private and a few people are trying out the process. If it
-works, it opens up to the whole guild.
+A few people are trying out the process. Anyone can read the repo; to
+propose a change you need a GitHub account.
